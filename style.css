@@ -51,6 +51,8 @@ section {
   font-size: 20px;
   background-color: rgb(45, 17, 96);
   border-radius: 3px;
+  cursor: pointer;
+  pointer-events: none;
 }
 
 .match {
@@ -71,4 +73,18 @@ section {
   display: flex;
   justify-content: space-around;
   align-items: center;
+}
+
+.player-hand {
+  transform: rotate(180deg);
+}
+
+div.fadeOut {
+  opacity: 0;
+  pointer-events: none;
+}
+
+div.fadeIn {
+  opacity: 1;
+  pointer-events: all;
 }
