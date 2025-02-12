@@ -27,9 +27,48 @@ const game = () =>  {
         // computer choice
         const computerNumber = Math.floor(Math.random() * 3);
         const computerChoice = computerOptions[computerNumber];
-      })
-    })
-  }
+        //Here is where we call compare hands
+      });
+    });
+  };
+
+   const compareHands = (playerChoice, computerChoice) => {
+     const winner = document.querySelector('.winner');
+      if (playerChoice === computerChoice) {
+        winner.textContent = 'It is a tie';
+        return;
+      }
+      // Check for rock
+      if (playerChoice === 'rock') {
+        if(computerChoice === 'scissors') {
+          winner.textContent = 'player Wins';
+          return;
+        } else {
+          winner.textContent = 'Computer Wins';
+          return;
+        }
+      }
+      // Check for paper
+      if (playerChoice === 'paper') {
+        if(computerChoice === 'scissors') {
+          winner.textContent = 'Computer Wins';
+          return;
+        } else {
+          winner.textContent = 'Player Wins';
+          return;
+        }
+      }
+      // Check for Scissors
+      if (playerChoice === 'scissors') {
+        if(computerChoice === 'rock') {
+          winner.textContent = 'Computer Wins';
+          return;
+        } else {
+          winner.textContent = 'Player Wins';
+          return;
+        }
+      }
+   }
 
   //Is call all the inner function
   startGame();
